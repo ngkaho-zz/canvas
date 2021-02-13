@@ -1,3 +1,5 @@
+package Service;
+
 public class CanvasService {
     
     public static void refreshCanvas () {

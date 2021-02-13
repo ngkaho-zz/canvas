@@ -1,3 +1,5 @@
+package Entity;
+
 public class Canvas {
    
     private String horizontalFrame;
