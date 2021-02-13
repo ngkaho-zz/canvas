@@ -6,8 +6,8 @@ import Service.PrintService;
 public class main {
 
     private static final String COMMAND_CREATE_CANVAS_REGEX = "[C]\s[0-9]+\s[0-9]+";
-    private static final String COMMAND_CREATE_LINE = "L ";
-    private static final String COMMAND_CREATE_RECTANGLE = "R ";
+    private static final String COMMAND_CREATE_LINE = "[L]\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+";
+    private static final String COMMAND_CREATE_RECTANGLE = "[R]\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+";
 
     public static void main ( String[] arg ) {
 
@@ -23,9 +23,13 @@ public class main {
             System.exit(1);
         }
         
-        while ( null == command || ! command.toLowerCase().equals( "q" ) ) {
+        while ( null == command || !command.toLowerCase().equals( "q" ) ) {
 
             command = console.readLine("enter your command: ");
+            
+            if ( command.toLowerCase().equals( "q" ) ) {
+                break;
+            }
 
             // Create Canvas
             if ( command.matches( COMMAND_CREATE_CANVAS_REGEX ) ) {
