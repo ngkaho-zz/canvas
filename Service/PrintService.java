@@ -1,6 +1,6 @@
 package Service;
 
-import java.util.Arrays;
+import Entity.Canvas;
 
 public class PrintService {
     

@@ -1,5 +1,8 @@
 import java.io.Console;
 
+import Entity.Canvas;
+import Service.PrintService;
+
 public class main {
 
     private static final String COMMAND_CREATE_CANVAS_REGEX = "[C]\s[0-9]+\s[0-9]+";
