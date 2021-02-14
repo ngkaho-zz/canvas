@@ -5,7 +5,7 @@ import Entity.Line;
 
 public class CanvasValidation {
 		
-	public Boolean isInCanvas ( Canvas c, Integer x1, Integer x2, Integer y1, Integer y2 ) {
+	public static Boolean isInCanvas ( Canvas c, Integer x1, Integer x2, Integer y1, Integer y2 ) {
 		
 		Boolean isIn = false;
 		

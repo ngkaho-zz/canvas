@@ -2,6 +2,7 @@ import java.io.Console;
 
 import Entity.Canvas;
 import Service.PrintService;
+import Util.CanvasValidation;
 
 public class main {
 
@@ -35,9 +36,6 @@ public class main {
             if ( command.matches( COMMAND_CREATE_CANVAS_REGEX ) ) {
                 String[] createCanvasArray = new String[ 3 ];
                 createCanvasArray = command.split( "\s" );
-                for ( Integer i = 0; i < createCanvasArray.length; i ++ ) {
-                    System.out.println( createCanvasArray[ i ] );
-                }
 
                 c = new Canvas();
 
@@ -47,6 +45,27 @@ public class main {
                 c.setWidth( canvasWidth );
                 c.setHeight( canvasHeight );
                 c.setBoard( canvasHeight, canvasWidth );
+
+            } else if ( command.matches( COMMAND_CREATE_LINE ) ) {
+
+                if ( null == c ) {
+                    System.out.println( "Canvas is not created. " );
+                    continue;
+                }
+
+                String[] createLineArray = new String[ 5 ];
+                createLineArray = command.split( "\s" );
+
+                Integer lineX1 = Integer.parseInt( createLineArray[ 1 ] );
+                Integer lineX2 = Integer.parseInt( createLineArray[ 2 ] );
+                Integer lineY1 = Integer.parseInt( createLineArray[ 3 ] );
+                Integer lineY2 = Integer.parseInt( createLineArray[ 4 ] );
+
+                if ( CanvasValidation.isInCanvas( c, lineX1, lineX2, lineY1, lineY2 ) ) {
+
+                } else {
+                    System.out.println( "Out of range. " );
+                }
 
             }
 
