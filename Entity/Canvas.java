@@ -18,7 +18,7 @@ public class Canvas {
 
     }
 
-    public void setBoard ( Integer height, Integer width ) {
+    public void setBoard ( Integer width, Integer height ) {
 
         this.board = new String[ height + 2 ][ width + 2 ];
 

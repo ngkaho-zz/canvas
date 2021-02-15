@@ -1,45 +1,48 @@
 package Entity;
 
-public class Line {
+public class Line extends Coordinate {
 
-	private Integer x1;
-	private Integer x2;
-	private Integer y1;
-	private Integer y2;
+	private Coordinate coordinate1;
+	private Coordinate coordinate2;
 
-	private Boolean isHorizontal;
-	private Boolean isVertical;
+	private String color;
 
-	public Integer getX1 () {
-		return this.x1;
-	}
-	
-	public void setX1 ( Integer x1 ) {
-		this.x1 = x1;
+	public Line () {
+		this.color = "x";
 	}
 
-	public Integer getX2 () {
-		return this.x2;
+	public void setColor ( String color ) {
+		this.color = color;
 	}
-	
-	public void setX2 ( Integer x2 ) {
-		this.x2 = x2;
+
+	public String getColor () {
+		return this.color;
 	}
-	
-	public Integer getY1 () {
-		return this.y1;
+
+	public void setCoordinate1 ( Coordinate c ) {
+		this.coordinate1 = c;
 	}
-	
-	public void setY1 ( Integer y1 ) {
-		this.y1 = y1;
+
+	public Coordinate getCoordinate1 () {
+		return this.coordinate1;
 	}
-	
-	public Integer getY2 () {
-		return this.y2;
+
+	public void setCoordinate2 ( Coordinate c ) {
+		this.coordinate2 = c;
 	}
-	
-	public void setY2 ( Integer y2 ) {
-		this.y2 = y2;
+
+	public Coordinate getCoordinate2 () {
+		return this.coordinate2;
+	}
+
+	public Boolean isHorizontal () {
+
+		if ( this.coordinate1.getY().equals( this.coordinate2.getY() ) ) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 	
 }

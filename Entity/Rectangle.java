@@ -1,42 +1,32 @@
 package Entity;
 
-public class Rectangle {
+import java.util.*;
 
-	private Integer x1;
-	private Integer x2;
-	private Integer y1;
-	private Integer y2;
+public class Rectangle extends Line {
 
-	public Integer getX1 () {
-		return this.x1;
-	}
-	
-	public void setX1 ( Integer x1 ) {
-		this.x1 = x1;
+	private List<Line> lineList;
+
+	private String color;
+
+	public Rectangle () {
+		this.lineList = new ArrayList<Line>();
+		this.color = "x";
 	}
 
-	public Integer getX2 () {
-		return this.x2;
+	public void addLine ( Line l ) {
+		this.lineList.add( l );
 	}
-	
-	public void setX2 ( Integer x2 ) {
-		this.x2 = x2;
+
+	public List<Line> getLineList () {
+		return this.lineList;
 	}
-	
-	public Integer getY1 () {
-		return this.y1;
+
+	public void setColor ( String color ) {
+		this.color = color;
 	}
-	
-	public void setY1 ( Integer y1 ) {
-		this.y1 = y1;
-	}
-	
-	public Integer getY2 () {
-		return this.y2;
-	}
-	
-	public void setY2 ( Integer y2 ) {
-		this.y2 = y2;
+
+	public String getColor () {
+		return this.color;
 	}
 	
 }
