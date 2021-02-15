@@ -2,8 +2,6 @@ package Service;
 
 import Entity.Canvas;
 import Entity.Line;
-import Entity.Rectangle;
-import Entity.Coordinate;
 
 public class CanvasService {
     
@@ -38,35 +36,11 @@ public class CanvasService {
 
     }
 
-    public void drawRectangleToBoard ( Canvas c, Rectangle r ) {
+    public void paintOnBoard ( Canvas c, Integer x, Integer y, String color ) {
 
-        String[][] board = c.getBoard();
-
-        // if ( l.isHorizontal() ) {
-        //     System.out.println( "Line is horizontal. " );
-        //     if ( lineX1 < lineX2 ) {
-        //         for ( Integer x = lineX1; x <= lineX2; x ++ ) {
-        //             board[ lineY1 ][ x ] = l.getColor();
-        //         }
-        //     } else {
-        //         for ( Integer x = lineX2; x <= lineX1; x ++ ) {
-        //             board[ lineY1 ][ x ] = l.getColor();
-        //         }
-        //     }
-        // } else {
-        //     System.out.println( "Line is vertical. " );
-        //     if ( lineY1 < lineY2 ) {
-        //         for ( Integer y = lineY1; y <= lineY2; y ++ ) {
-        //             board[ y ][ lineX1 ] = l.getColor();
-        //         }
-        //     } else {
-        //         for ( Integer y = lineY2; y <= lineY1; y ++ ) {
-        //             board[ y ][ lineX1 ] = l.getColor();
-        //         }
-        //     }
-        // }
-        
-        System.out.println( "Drew line. " );
+        c.getBoard()[ y ][ x ] = color;
+        System.out.println( "Painter " + color + " on ( " + x + ", " + y + " ). "  );
+        return;
 
     }
 

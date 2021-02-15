@@ -9,12 +9,14 @@ public class LineService {
 
     public Line createLine ( Integer x1, Integer y1, Integer x2, Integer y2 ) {
 
-        Line l = new Line();
+        Line l = null;
 
         Coordinate coordinate1 = new Coordinate();
         Coordinate coordinate2 = new Coordinate();
 
         if ( LineValidation.isValidLine( x1, y1, x2, y2 ) ) {
+
+            l = new Line();
 
             if ( x1 < x2 || y1 < y2 ) {
 

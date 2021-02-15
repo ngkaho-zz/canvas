@@ -4,6 +4,22 @@ import Entity.Canvas;
 
 public class CanvasValidation {
 		
+	public static Boolean isInCanvas ( Canvas c, Integer x, Integer y ) {
+		
+		Boolean isIn = false;
+		
+		if ( x >= 1 && x <= c.getWidth()
+				&& y >= 1 && y <= c.getHeight() ) {
+			System.out.println( "Object is in canvas. " );
+			isIn = true;
+		} else {
+			System.out.println( "Object is not in canvas. " );
+		}
+		
+		return isIn;
+		
+	}
+		
 	public static Boolean isInCanvas ( Canvas c, Integer x1, Integer y1, Integer x2, Integer y2 ) {
 		
 		Boolean isIn = false;

@@ -74,4 +74,34 @@ public class Canvas {
         this.verticalFrame = verticalFrame;
     }
 
+    public String getCurrentCoordinateColor ( Canvas c, Integer x, Integer y ) {
+
+        return this.board[ y ][ x ];
+
+    }
+
+    public String getUpperCoordinateColor ( Integer x, Integer y ) {
+
+        return this.board[ y - 1 ][ x ];
+
+    }
+
+    public String getLefterCoordinateColor ( Integer x, Integer y ) {
+
+        return this.board[ y ][ x - 1 ];
+
+    }
+
+    public String getLowerCoordinateColor ( Integer x, Integer y ) {
+
+        return this.board[ y + 1 ][ x ];
+
+    }
+
+    public String getRighterCoordinateColor ( Integer x, Integer y ) {
+
+        return this.board[ y ][ x + 1 ];
+
+    }
+
 }

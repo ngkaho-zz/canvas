@@ -5,6 +5,7 @@ import Entity.Line;
 import Entity.Rectangle;
 import Service.CanvasService;
 import Service.LineService;
+import Service.PaintService;
 import Service.PrintService;
 import Service.RectangleService;
 import Util.CanvasValidation;
@@ -16,6 +17,7 @@ public class main {
     private static final String COMMAND_CREATE_CANVAS_REGEX = "[C]\s[0-9]+\s[0-9]+";
     private static final String COMMAND_CREATE_LINE = "[L]\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+";
     private static final String COMMAND_CREATE_RECTANGLE = "[R]\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+";
+    private static final String COMMAND_PAINT = "[B]\s[0-9]+\s[0-9]+\s.";
 
     public static void main ( String[] arg ) {
 
@@ -101,6 +103,27 @@ public class main {
                             canvasService.drawLineToBoard( c, l );
                         }
                     }
+                }
+
+            } else if ( command.matches( COMMAND_PAINT ) ) {
+
+                if ( !CanvasValidation.isCreated( c ) ) {
+                    continue;
+                }
+
+                String[] paintArray = new String[ 4 ];
+                paintArray = command.split( "\s" );
+
+                Integer paintX = Integer.parseInt( paintArray[ 1 ] );
+                Integer paintY = Integer.parseInt( paintArray[ 2 ] );
+                String color = paintArray[ 3 ];
+
+                System.out.println( paintX );
+                System.out.println( paintY );
+                System.out.println( color );
+
+                if ( CanvasValidation.isInCanvas( c, paintX, paintY ) ) {
+                    PaintService.paint( c, paintX, paintY, color );
                 }
 
             }
