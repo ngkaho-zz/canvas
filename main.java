@@ -1,6 +1,7 @@
 import java.io.Console;
 
 import Entity.Canvas;
+import Entity.Coordinate;
 import Entity.Line;
 import Entity.Rectangle;
 import Service.CanvasService;
@@ -14,10 +15,10 @@ import Util.RectangleValidation;
 
 public class main {
 
-    private static final String COMMAND_CREATE_CANVAS_REGEX = "[C]\s[0-9]+\s[0-9]+";
-    private static final String COMMAND_CREATE_LINE = "[L]\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+";
-    private static final String COMMAND_CREATE_RECTANGLE = "[R]\s[0-9]+\s[0-9]+\s[0-9]+\s[0-9]+";
-    private static final String COMMAND_PAINT = "[B]\s[0-9]+\s[0-9]+\s.";
+    private static final String COMMAND_CREATE_CANVAS_REGEX = "[C]\\s[0-9]+\\s[0-9]+";
+    private static final String COMMAND_CREATE_LINE = "[L]\\s[0-9]+\\s[0-9]+\\s[0-9]+\\s[0-9]+";
+    private static final String COMMAND_CREATE_RECTANGLE = "[R]\\s[0-9]+\\s[0-9]+\\s[0-9]+\\s[0-9]+";
+    private static final String COMMAND_PAINT = "[B]\\s[0-9]+\\s[0-9]+\\s.";
 
     public static void main ( String[] arg ) {
 
@@ -48,12 +49,12 @@ public class main {
             // Create Canvas
             if ( command.matches( COMMAND_CREATE_CANVAS_REGEX ) ) {
                 String[] createCanvasArray = new String[ 3 ];
-                createCanvasArray = command.split( "\s" );
+                createCanvasArray = command.split( "\\s" );
 
                 Integer canvasWidth = Integer.parseInt( createCanvasArray[ 1 ] );
                 Integer canvasHeight = Integer.parseInt( createCanvasArray[ 2 ] );
 
-                if ( CanvasValidation.isValidCanvas( canvasWidth, canvasHeight ) ) {
+                if ( CanvasValidation.isValid( canvasWidth, canvasHeight ) ) {
                     c = canvasService.createCanvas( canvasWidth, canvasHeight );
                 }
 
@@ -66,7 +67,7 @@ public class main {
                 Line l = null;
 
                 String[] createLineArray = new String[ 5 ];
-                createLineArray = command.split( "\s" );
+                createLineArray = command.split( "\\s" );
 
                 Integer lineX1 = Integer.parseInt( createLineArray[ 1 ] );
                 Integer lineY1 = Integer.parseInt( createLineArray[ 2 ] );
@@ -89,7 +90,7 @@ public class main {
                 Rectangle r = null;
 
                 String[] createRectangleArray = new String[ 5 ];
-                createRectangleArray = command.split( "\s" );
+                createRectangleArray = command.split( "\\s" );
 
                 Integer rectangleX1 = Integer.parseInt( createRectangleArray[ 1 ] );
                 Integer rectangleY1 = Integer.parseInt( createRectangleArray[ 2 ] );
@@ -112,18 +113,29 @@ public class main {
                 }
 
                 String[] paintArray = new String[ 4 ];
-                paintArray = command.split( "\s" );
+                paintArray = command.split( "\\s" );
 
                 Integer paintX = Integer.parseInt( paintArray[ 1 ] );
                 Integer paintY = Integer.parseInt( paintArray[ 2 ] );
-                String color = paintArray[ 3 ];
+
+                Coordinate coordinate = new Coordinate();
+                coordinate.setX( paintX );
+                coordinate.setY( paintY );
+
+                String color;
+                
+                if ( paintArray.length == 4 ) {
+                    color = paintArray[ 3 ];
+                } else {
+                    color = " ";
+                }
 
                 System.out.println( paintX );
                 System.out.println( paintY );
                 System.out.println( color );
 
                 if ( CanvasValidation.isInCanvas( c, paintX, paintY ) ) {
-                    PaintService.paint( c, paintX, paintY, color );
+                    PaintService.paint( c, coordinate, color );
                 }
 
             }

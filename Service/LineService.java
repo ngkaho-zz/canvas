@@ -14,7 +14,7 @@ public class LineService {
         Coordinate coordinate1 = new Coordinate();
         Coordinate coordinate2 = new Coordinate();
 
-        if ( LineValidation.isValidLine( x1, y1, x2, y2 ) ) {
+        if ( LineValidation.isValid( x1, y1, x2, y2 ) ) {
 
             l = new Line();
 

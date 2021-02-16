@@ -39,7 +39,7 @@ public class CanvasService {
     public void paintOnBoard ( Canvas c, Integer x, Integer y, String color ) {
 
         c.getBoard()[ y ][ x ] = color;
-        System.out.println( "Painter " + color + " on ( " + x + ", " + y + " ). "  );
+        // System.out.println( "Painted " + color + " on ( " + x + ", " + y + " ). "  );
         return;
 
     }

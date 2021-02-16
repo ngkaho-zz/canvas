@@ -38,7 +38,7 @@ public class CanvasValidation {
 		
 	}
 
-	public static Boolean isValidCanvas ( Integer width, Integer height ) {
+	public static Boolean isValid ( Integer width, Integer height ) {
 
 		Boolean isValid = false;
 

@@ -74,7 +74,7 @@ public class Canvas {
         this.verticalFrame = verticalFrame;
     }
 
-    public String getCurrentCoordinateColor ( Canvas c, Integer x, Integer y ) {
+    public String getCurrentCoordinateColor ( Integer x, Integer y ) {
 
         return this.board[ y ][ x ];
 

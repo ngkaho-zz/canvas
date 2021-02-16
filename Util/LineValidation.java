@@ -4,7 +4,7 @@ import Entity.Line;
 
 public class LineValidation {
 
-    public static Boolean isValidLine ( Integer x1, Integer y1, Integer x2, Integer y2 ) {
+    public static Boolean isValid ( Integer x1, Integer y1, Integer x2, Integer y2 ) {
 
         Boolean isValid = false;
 

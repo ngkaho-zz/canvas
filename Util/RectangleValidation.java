@@ -3,14 +3,6 @@ package Util;
 import Entity.Rectangle;
 
 public class RectangleValidation {
-    
-    public static Boolean isValid () {
-
-        Boolean isValid = false;
-
-        return isValid;
-
-    }
 
     public static Boolean isCreated ( Rectangle r ) {
 
