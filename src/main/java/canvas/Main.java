@@ -1,6 +1,8 @@
 package canvas;
 
-import java.io.Console;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 import constants.SystemConstants;
 import entity.Canvas;
@@ -18,23 +20,17 @@ import util.RectangleValidation;
 
 public class Main {
 
-    public static void main ( String[] arg ) {
+    public static void main ( String[] arg ) throws IOException {
 
         String command = null;
         Canvas c = null;
 
-        Console console = System.console();
+        BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
 
-        if ( console == null ) {
-
-            System.err.println( "No console." );
-            System.exit( 1 );
-
-        }
-        
         while ( null == command || !command.toUpperCase().matches( SystemConstants.COMMAND_EXIT_REGEX ) ) {
 
-            command = console.readLine("enter your command: ");
+        	System.out.print( "enter your command: " );
+        	command = br.readLine();
 
             if ( command.toUpperCase().matches( SystemConstants.COMMAND_EXIT_REGEX ) ) {
                 break;
