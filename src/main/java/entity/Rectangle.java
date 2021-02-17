@@ -1,3 +1,11 @@
+/**
+ * Class:	Rectangle
+ * Purpose:	To store the Rectangle object attributes, extends the Line object
+ * Author:	Kelvin Ng
+ * Version:	1.0
+ * Date:	17/02/2021
+ */
+
 package entity;
 
 import java.util.*;

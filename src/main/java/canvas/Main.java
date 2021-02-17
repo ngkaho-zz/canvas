@@ -1,3 +1,11 @@
+/**
+ * Class:	Main
+ * Purpose:	To start the program, prompt input for users
+ * Author:	Kelvin Ng
+ * Version:	1.0
+ * Date:	17/02/2021
+ */
+
 package canvas;
 
 import java.io.BufferedReader;

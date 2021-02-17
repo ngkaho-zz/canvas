@@ -1,3 +1,11 @@
+/**
+ * Class:	CanvasTest
+ * Purpose:	Contains test cases against the whole system
+ * Author:	Kelvin Ng
+ * Version:	1.0
+ * Date:	17/02/2021
+ */
+
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;

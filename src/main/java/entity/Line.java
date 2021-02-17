@@ -1,3 +1,11 @@
+/**
+ * Class:	Line
+ * Purpose:	To store the Line object attributes, extends the Coordinate object
+ * Author:	Kelvin Ng
+ * Version:	1.0
+ * Date:	17/02/2021
+ */
+
 package entity;
 
 import constants.SystemConstants;

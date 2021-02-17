@@ -1,3 +1,11 @@
+/**
+ * Class:	LineValidation
+ * Purpose:	Contains the validation method against Rectangle
+ * Author:	Kelvin Ng
+ * Version:	1.0
+ * Date:	17/02/2021
+ */
+
 package util;
 
 import entity.Rectangle;

@@ -1,3 +1,11 @@
+/**
+ * Class:	LineService
+ * Purpose:	Contains all the methods controlling the Line
+ * Author:	Kelvin Ng
+ * Version:	1.0
+ * Date:	17/02/2021
+ */
+
 package service;
 
 import entity.Line;

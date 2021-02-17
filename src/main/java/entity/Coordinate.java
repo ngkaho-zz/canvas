@@ -1,3 +1,11 @@
+/**
+ * Class:	Coordinate
+ * Purpose:	To store the Coordinate object attributes
+ * Author:	Kelvin Ng
+ * Version:	1.0
+ * Date:	17/02/2021
+ */
+
 package entity;
 
 public class Coordinate {

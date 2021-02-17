@@ -1,3 +1,11 @@
+/**
+ * Class:	Canvas
+ * Purpose:	To store the Canvas object attributes
+ * Author:	Kelvin Ng
+ * Version:	1.0
+ * Date:	17/02/2021
+ */
+
 package entity;
 
 import constants.SystemConstants;

@@ -1,3 +1,11 @@
+/**
+ * Class:	SystemConstants
+ * Purpose:	To store all the system constants in a class
+ * Author:	Kelvin Ng
+ * Version:	1.0
+ * Date:	17/02/2021
+ */
+
 package constants;
 
 public class SystemConstants {
