@@ -23,7 +23,7 @@ mvn package
 ```
 
 ```bash
-java -jar target\canvas-0.0.1-SNAPSHOT.jar
+java -jar target\
 ```
 
 # Steps to run test
