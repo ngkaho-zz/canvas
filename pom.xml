@@ -37,9 +37,6 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.1.0</version>
 				<configuration>
-					<includes>
-						<include>**/*Test.java</include>
-					</includes>
 					<archive>
 						<manifest>
 							<!-- give full qualified name of your main class -->

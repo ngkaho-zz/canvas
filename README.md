@@ -4,7 +4,7 @@ This is the Tech Coding Challenge test for Ka Ho NG.
 
 # Steps to run the program
 
-Unzip the file and use mvn to install dependencies, then can run with java.
+Unzip the file and use mvn to install dependencies, go to the unzipped folder directory ( expect a pom file inside ), then can run the program with Java.
 
 ```bash
 cd ${extractedZipDestination}
